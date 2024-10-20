@@ -8,10 +8,12 @@ import {
 } from 'react-native';
 import Lottie from 'lottie-react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {useNavigation} from '@react-navigation/native';
 
 const {width, height} = Dimensions.get('window');
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.lottie}>
@@ -24,19 +26,23 @@ const HomeScreen = () => {
         />
       </View>
 
-      <TouchableOpacity style={styles.addTaskButton}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Todo')}
+        style={styles.addTaskButton}>
         <LinearGradient
           style={styles.addTaskButton}
-          colors={['#a78bfa', '#fef3c7']}>
+          colors={['#789DBC', '#FFE3E3']}>
           <Text style={styles.addTaskText}>New Task, Who's In?</Text>
         </LinearGradient>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.resetButton}>
+      <TouchableOpacity
+        //onPress={() => navigation.navigate('Todo')}
+        style={styles.resetButton}>
         <LinearGradient
           style={styles.resetButton}
-          colors={['#a7f3d0', '#ff6347']}>
-          <Text style={styles.addTaskText}>New Task, Who's In?</Text>
+          colors={['#7EACB5', '#FADFA1']}>
+          <Text style={styles.resetText}>Reset</Text>
         </LinearGradient>
       </TouchableOpacity>
     </SafeAreaView>
@@ -55,7 +61,37 @@ const styles = StyleSheet.create({
     width: width * 0.9,
     height: width,
   },
-  addTaskButton: {},
-  addTaskText: {},
-  resetButton: {},
+  addTaskButton: {
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.3,
+    shadowRadius: 3.84,
+    elevation: 5,
+    marginTop: 20,
+  },
+  addTaskText: {
+    color: '#1E3E62',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  resetButton: {
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 15,
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.3,
+    shadowRadius: 3.84,
+    elevation: 5,
+    marginTop: 20,
+  },
+
+  resetText: {
+    color: '#0B192C',
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 });

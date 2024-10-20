@@ -34,7 +34,7 @@ const OnboardingScreen = () => {
         containerStyles={{paddingHorizontal: 15}}
         pages={[
           {
-            backgroundColor: '#a7f3d0',
+            backgroundColor: '#E7E8D8',
             image: (
               <View style={styles.lottie}>
                 <Lottie
@@ -51,7 +51,7 @@ const OnboardingScreen = () => {
           },
 
           {
-            backgroundColor: '#fef3ce',
+            backgroundColor: '#B5CFB7',
             image: (
               <View style={styles.lottie}>
                 <Lottie
@@ -67,7 +67,7 @@ const OnboardingScreen = () => {
               'Complete your tasks smoothly with our productivity tips.',
           },
           {
-            backgroundColor: '#a78bfa',
+            backgroundColor: '#EED3D9',
             image: (
               <View style={styles.lottie}>
                 <Lottie
