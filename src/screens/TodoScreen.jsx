@@ -12,6 +12,8 @@ import React, {useEffect, useState} from 'react';
 
 import uuid from 'react-native-uuid';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import LinearGradient from 'react-native-linear-gradient';
+import {AddSquare} from 'iconsax-react-native';
 
 const TodoScreen = () => {
   //inputun icerisinde ki deger
@@ -52,6 +54,14 @@ const TodoScreen = () => {
     //state guncelle
     setTodos(updatedTodos);
     //asyncstorage guncelle
+    saveTodos(updatedTodos);
+  };
+
+  const completeTodo = async id => {
+    const updatedTodos = todos.map(item =>
+      item.id === id ? {...item, completed: !item.completed} : item,
+    );
+    setTodos(updatedTodos);
     saveTodos(updatedTodos);
   };
 
@@ -96,9 +106,9 @@ const TodoScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <LinearGradient colors={['#FCFAEE', '#A5B68D']} style={styles.container}>
       <SafeAreaView>
-        <Text style={styles.headerText}>React Native Async Storage</Text>
+        <Text style={styles.headerText}>TO-DO</Text>
 
         <View style={styles.inputContainer}>
           <TextInput
@@ -109,7 +119,7 @@ const TodoScreen = () => {
           <TouchableOpacity
             onPress={addTodo}
             style={[styles.button, styles.addButton]}>
-            <Text style={styles.buttonText}>Add</Text>
+            <AddSquare size="32" color="#ba68c8" />
           </TouchableOpacity>
         </View>
 
@@ -119,7 +129,16 @@ const TodoScreen = () => {
           renderItem={({item}) => (
             <View style={styles.todoItem}>
               <Text style={{color: '#000000'}}>{item?.text}</Text>
+
               <View style={{flexDirection: 'row'}}>
+                <View style={styles.buttonContainer}>
+                  <TouchableOpacity
+                    onPress={() => completeTodo(item?.id)}
+                    style={[styles.button, styles.completeButton]}>
+                    <Text style={styles.buttonText}></Text>
+                  </TouchableOpacity>
+                </View>
+
                 <View style={styles.buttonContainer}>
                   <TouchableOpacity
                     onPress={() => deleteTodo(item?.id)}
@@ -140,7 +159,7 @@ const TodoScreen = () => {
           )}
         />
       </SafeAreaView>
-    </View>
+    </LinearGradient>
   );
 };
 
@@ -195,4 +214,5 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
     padding: 10,
   },
+  completeButton: {},
 });
