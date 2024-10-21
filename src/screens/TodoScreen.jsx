@@ -13,7 +13,13 @@ import React, {useEffect, useState} from 'react';
 import uuid from 'react-native-uuid';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import LinearGradient from 'react-native-linear-gradient';
-import {AddSquare} from 'iconsax-react-native';
+import {
+  AddSquare,
+  CloseSquare,
+  Edit2,
+  TickSquare,
+  Trash,
+} from 'iconsax-react-native';
 
 const TodoScreen = () => {
   //inputun icerisinde ki deger
@@ -128,14 +134,26 @@ const TodoScreen = () => {
           keyExtractor={item => item?.id.toString()}
           renderItem={({item}) => (
             <View style={styles.todoItem}>
-              <Text style={{color: '#000000'}}>{item?.text}</Text>
+              <Text
+                style={[
+                  styles.todoText,
+                  item.completed && styles.completedText,
+                ]}>
+                {item?.text}
+              </Text>
 
               <View style={{flexDirection: 'row'}}>
                 <View style={styles.buttonContainer}>
                   <TouchableOpacity
                     onPress={() => completeTodo(item?.id)}
                     style={[styles.button, styles.completeButton]}>
-                    <Text style={styles.buttonText}></Text>
+                    <Text style={styles.buttonText}>
+                      {item.completed ? (
+                        <CloseSquare size="24" color="#697689" />
+                      ) : (
+                        <TickSquare size="27" color="#ba68c8" />
+                      )}
+                    </Text>
                   </TouchableOpacity>
                 </View>
 
@@ -143,7 +161,9 @@ const TodoScreen = () => {
                   <TouchableOpacity
                     onPress={() => deleteTodo(item?.id)}
                     style={[styles.button, styles.deleteButton]}>
-                    <Text style={styles.buttonText}> Delete</Text>
+                    <Text style={styles.buttonText}>
+                      <Trash size="27" color="#ba68c8" />
+                    </Text>
                   </TouchableOpacity>
                 </View>
 
@@ -151,7 +171,10 @@ const TodoScreen = () => {
                   <TouchableOpacity
                     onPress={() => updatedTodos(item?.id)}
                     style={[styles.button, styles.updateButton]}>
-                    <Text style={styles.buttonText}> Update</Text>
+                    <Text style={styles.buttonText}>
+                      {' '}
+                      <Edit2 size="27" color="#ba68c8" />
+                    </Text>
                   </TouchableOpacity>
                 </View>
               </View>
@@ -192,7 +215,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   addButton: {
-    backgroundColor: 'purple',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 8,
@@ -208,11 +230,11 @@ const styles = StyleSheet.create({
   buttonContainer: {},
   deleteButton: {
     padding: 10,
-    backgroundColor: 'red',
   },
   updateButton: {
-    backgroundColor: 'green',
     padding: 10,
   },
   completeButton: {},
+  todoText: {},
+  completedText: {},
 });
