@@ -4,6 +4,7 @@ import OnboardingScreen from '../screens/OnboardingScreen';
 import HomeScreen from '../screens/HomeScreen';
 import TodoScreen from '../screens/TodoScreen';
 import {useEffect, useState} from 'react';
+import {getItem} from '../utils/asyncStorage';
 
 const Stack = createNativeStackNavigator();
 
