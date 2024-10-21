@@ -208,10 +208,10 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 10,
     borderColor: 'gray',
+    flex: 1,
   },
   button: {
     marginLeft: 10,
-
     borderRadius: 5,
   },
   addButton: {
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   buttonText: {
-    color: 'white',
+    color: 'gray',
   },
   todoItem: {
     flexDirection: 'row',
@@ -234,7 +234,18 @@ const styles = StyleSheet.create({
   updateButton: {
     padding: 10,
   },
-  completeButton: {},
-  todoText: {},
-  completedText: {},
+  completeButton: {
+    padding: 10,
+  },
+  todoText: {
+    color: '#000',
+    textDecorationLine: 'none',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  completedText: {
+    textDecorationLine: 'line-through',
+    color: 'gray',
+    fontSize: 15,
+  },
 });
