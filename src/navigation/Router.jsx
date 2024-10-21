@@ -19,14 +19,13 @@ const Router = () => {
       setShowOnboarding(true);
     }
   };
+  useEffect(() => {
+    checkIfAlreadyOnboarded();
+  }, []);
 
   if (showOnboarding == null) {
     return null;
   }
-
-  useEffect(() => {
-    checkIfAlreadyOnboarded();
-  }, []);
 
   if (showOnboarding) {
     return (
