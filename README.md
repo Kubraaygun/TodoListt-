@@ -37,4 +37,4 @@ React Native ile geliştirdiğim bu proje, onboarding, görev yönetimi ve Async
 
 ## Ekran Görüntüsü
 
-![](../TodoListt/src/assets/gif/todo.gif)
+![](./src/assets/gif/todo.gif)
