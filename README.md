@@ -36,3 +36,5 @@ React Native ile geliştirdiğim bu proje, onboarding, görev yönetimi ve Async
 - LinearGradient
 
 ## Ekran Görüntüsü
+
+![](../todo.gif)
