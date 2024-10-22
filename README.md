@@ -26,3 +26,13 @@ React Native ile geliştirdiğim bu proje, onboarding, görev yönetimi ve Async
 
 - Kullanıcılar görev ekleyebilir, düzenleyebilir, tamamlanmış olarak işaretleyebilir veya silebilir.
 - Görevler AsyncStorage ile yerel olarak saklanır.
+
+## Kullanılan Teknolojiler
+
+- React Native
+- React Navigation
+- AsyncStorage
+- Lottie
+- LinearGradient
+
+## Ekran Görüntüsü
