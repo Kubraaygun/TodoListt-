@@ -33,7 +33,7 @@ Users can skip or complete the onboarding process.
 -AsyncStorage
 - Lottie
 - LinearGradient
-- 
+
 ## Screenshot
 
 ![](./src/assets/gif/todo.gif)
