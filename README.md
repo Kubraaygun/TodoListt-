@@ -1,12 +1,12 @@
-# React Native To-Do Uygulaması
+# React Native To-Do App
 
-React Native ile geliştirdiğim bu proje, onboarding, görev yönetimi ve AsyncStorage ile kalıcı veri saklama özelliklerine sahip basit bir To-Do uygulamasıdır.
+This project I developed with React Native is a simple To-Do application with onboarding, task management, and persistent data storage with AsyncStorage.
 
 ## Özellikler
 
-- **Onboarding**: Kullanıcılar uygulamayı ilk açtıklarında onboarding (tanıtım) ekranını görürler.
-- **Görev Yönetimi**: Kullanıcılar görev ekleyebilir, güncelleyebilir, tamamlayabilir veya silebilir.
-- **Kalıcı Veri Saklama**: Görevler, AsyncStorage kullanılarak yerel olarak saklanır ve uygulama yeniden başlatıldığında görevler kaybolmaz.
+- **Onboarding**: When users first open the application, they see the onboarding screen.
+- **Task Management**: Kullanıcılar görev ekleyebilir, güncelleyebilir, tamamlayabilir veya silebilir.
+- **Permanent Data Storage**: Tasks are stored locally using AsyncStorage and are not lost when the application is restarted.
 
 ## Screens
 
